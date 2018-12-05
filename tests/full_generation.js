@@ -68,7 +68,7 @@ const receipt3 = {
 	]
 };
 
-[receipt1, receipt2, receipt3].forEach((manuscript, i) => {
+[receipt1, receipt2, receipt3].forEach(async (manuscript, i) => {
 	const document = generator({
 		company: {
 			email: 'info@sciencematters.io',
@@ -79,7 +79,8 @@ const receipt3 = {
 		recipients: [
 			{name: 'Jonny Burger', affiliation: 'Jonny Burger Hacker Company'},
 			{name: 'Lucas Pelloni', affiliation: 'University of Zurich'}
-		]
+		],
+		chfAmount: 'CHF 593.99'
 	});
 
 	document.generate();
